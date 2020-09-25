@@ -62,7 +62,7 @@ func Setenv(initid *C.UDF_INIT, args *C.UDF_ARGS, isNull *C.char, isError *C.cha
 //export Getenv_init
 func Getenv_init(initid *C.UDF_INIT, args *C.UDF_ARGS, message *C.char) C.bool {
 	if args.arg_count != 1 {
-		msg(message, "`getenv` requires 1 parameter: the region, the bucket, and the key")
+		msg(message, "`getenv` requires 1 parameter: the environment variable name")
 		return C.bool(true)
 	}
 
